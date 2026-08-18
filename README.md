@@ -36,6 +36,27 @@ docs/            # data source notes, architecture decisions
 notebooks/       # exploratory analysis
 ```
 
+## Pipeline setup
+
+```
+python -m venv .venv
+.venv/Scripts/activate        # .venv/bin/activate on macOS/Linux
+pip install -r requirements.txt
+cp .env.example .env          # then fill in ODPT_API_KEY
+```
+
+Get a free ODPT API key at https://developer.odpt.org/ (register, create an
+application, copy the consumer key into `.env`).
+
+Fetch station master data for all v1 operators (JR East, Tokyo Metro, Toei):
+
+```
+python -m pipeline.ingest.odpt_stations --all
+```
+
+Output lands in `data/raw/odpt/` (gitignored — see `docs/DATA_SOURCES.md`
+for provenance/licensing notes).
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Underlying datasets carry their own
