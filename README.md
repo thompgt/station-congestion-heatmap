@@ -57,6 +57,19 @@ python -m pipeline.ingest.odpt_stations --all
 Output lands in `data/raw/odpt/` (gitignored — see `docs/DATA_SOURCES.md`
 for provenance/licensing notes).
 
+## Frontend
+
+```
+cd web
+npm install
+npm run dev
+```
+
+`npm run dev`/`npm run build` automatically copy the latest
+`data/processed/stations.geojson` into `web/public/data/` first (via
+`scripts/build-data.mjs`) — if the pipeline hasn't been run yet, it falls
+back to an empty placeholder so the app still loads.
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Underlying datasets carry their own
