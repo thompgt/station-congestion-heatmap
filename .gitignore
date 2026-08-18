@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+
+# Raw data (large/bulky source downloads — keep out of git; document
+# provenance in docs/DATA_SOURCES.md instead). Small sample files can be
+# force-added with `git add -f` if needed for tests/demos.
+data/raw/**
+!data/raw/.gitkeep
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env/secrets
+.env
+.env.local
